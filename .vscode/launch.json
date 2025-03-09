@@ -17,7 +17,7 @@
         "environment": [],
         "preLaunchTask": "${defaultBuildTask}",
         "console": "integratedTerminal",
-        "symbolSearchPath": "${workspaceFolder}/zig-out/bin/Debug/",
+        "symbolSearchPath": "${workspaceFolder}/zig-out/bin/",
       },
       {
         "name": "Debug Attach",
@@ -31,6 +31,17 @@
         "preLaunchTask": "Zig: Run main",
         "internalConsoleOptions": "openOnFirstSessionStart",
         "processId": "${command:pickProcess}"
-      }
+      },
+      {
+        "name": "Debug test",
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/zig-out/bin/${fileBasenameNoExtension}-test",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "preLaunchTask": "build zig test",
+        "console": "integratedTerminal",
+        "symbolSearchPath": "${workspaceFolder}/zig-out/bin/",
+    }
     ]
   }

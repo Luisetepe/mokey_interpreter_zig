@@ -26,8 +26,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
-    // This creates another `std.Build.Step.Compile`, but this one builds an executable
-    // rather than a static library.
+    // Creates a `std.Build.Step.Compile`, for an executable.
     const exe = b.addExecutable(.{
         .name = "monkey_interpreter",
         .root_module = exe_mod,
